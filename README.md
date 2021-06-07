@@ -18,3 +18,8 @@
 - widget tree 에서 현재 widget의 위치를 알 수 있는 정보 
 - 위치정보를 알수 있는 context를 넣어서 Scaffold widget을 리턴을 한다.
 - stateless위젯이나 state빌드 메서드에 의해서 리턴 된 위젯의 부모가 된다.
+
+5. Container
+- child가 없으면 가능한 전체 크기를 가진다.
+- child가 생기면, 그 child 크기만큼을 가진다.
+- child를 1개만 가질 수 있다.
