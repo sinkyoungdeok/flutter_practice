@@ -7,54 +7,54 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Container',
+      title: 'Navigator',
       theme: ThemeData(primarySwatch: Colors.red),
-      home: MyPage(),
+      home: FirstPage(),
     );
   }
 }
 
-class MyPage extends StatelessWidget {
+class FirstPage extends StatelessWidget {
+  const FirstPage({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
-      body: SafeArea(
-        child: Row(
-          //mainAxisAlignment: MainAxisAlignment.center, // 얘는 세로축을 전체를 가지고 있음
-          //mainAxisSize: MainAxisSize.min, // 얘는 세로축을 children만큼만 가짐
-          //verticalDirection: VerticalDirection.up, // 얘는 밑에서부터 위로 widget을 쌓는식으로 바꿈
-          //mainAxisAlignment: MainAxisAlignment.spaceEvenly, // widget만큼 space를 동일하게 줌
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.white,
-              child: Text('Container 1'),
-            ),
-            SizedBox(
-              width: 30.0,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.blue,
-              child: Text('Container 2'),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
-              child: Text('Container 3'),
-            ),
-            Container(
-              width: double.infinity,
-              height: 20,
-            ),
-          ],
+      appBar: AppBar(
+        title: Text('First page'),
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text('Go to the second page'),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(
+                builder: (context) => SecondPage()
+            ));
+          }
         ),
       ),
     );
   }
 }
+
+class SecondPage extends StatelessWidget {
+  const SecondPage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Second page'),
+      ),
+      body: Center(
+        child: RaisedButton(
+            child: Text('Go to the First page'),
+            onPressed: () {
+              Navigator.pop(context);
+            }
+        ),
+      ),
+    );
+  }
+}
+
