@@ -27,3 +27,16 @@
 6. Column
 - 복수 child를 가질 수 있다.
 - 세로축 방향으로 가능한 크기만큼 가지지만, 가로축은 children의 가로축 만큼만 가진다.
+
+7. State
+- State란 UI가 변경되도록 영향을 미치는 데이터이다.
+- App 수준과 Widget 수준의 데이터가 있다.
+
+8. Stateless widget
+- state가 변하지 않는 위젯
+- reload로는 적용이 안되며, rebuild만을 통해서 새로운 State 적용 가능
+
+9. Widget Tree vs Element Tree vs Render Tree
+- Widget Tree: 우리가 작성한 코드에 근거해서 플러터가 빌드 메소드로 생성, 설계도와 같은것으로써 실제로 스크린에 그려지진 않는다.
+- Element Tree: 중간에서 Widget Tree와 Render Tree를 연결하는 역할을한다, 플러터가 자동으로 Widget Tree의 위젯들을 하나 하나 element로 링크를 만들어 준다.
+- Render Tree: 직접적으로 스크린에 그림을 그려준다. Render Object 들을 하나씩 하나씩 Element Tree의 element랑 매핑이 된다.
