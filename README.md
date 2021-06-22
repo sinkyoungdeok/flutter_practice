@@ -40,3 +40,7 @@
 - Widget Tree: 우리가 작성한 코드에 근거해서 플러터가 빌드 메소드로 생성, 설계도와 같은것으로써 실제로 스크린에 그려지진 않는다.
 - Element Tree: 중간에서 Widget Tree와 Render Tree를 연결하는 역할을한다, 플러터가 자동으로 Widget Tree의 위젯들을 하나 하나 element로 링크를 만들어 준다.
 - Render Tree: 직접적으로 스크린에 그림을 그려준다. Render Object 들을 하나씩 하나씩 Element Tree의 element랑 매핑이 된다.
+
+10. Stateful 위젯의 데이터 변경 방법들
+- Child 위젯의 생성자를 통해서 데이터가 전달될 때 (이거는 Stateless랑 동일)
+- Internal state가 바뀔 때
